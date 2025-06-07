@@ -10,14 +10,17 @@ interface MovieCardProps {
 
 export default function MovieCard({ movie, onClick }: MovieCardProps) {
   return (
-    <div onClick={onClick} className="cursor-pointer w-40">
-      <img
-        src={getImageUrl(movie.poster_path ?? '')}
-        alt={movie.title}
-        className="rounded-md"
-      />
-      <h2 className="text-white font-semibold">{movie.title}</h2>
-      <p className="text-gray-300 text-sm">{movie.release_date.substring(0, 4)}</p>
+    <div onClick={onClick} className="cursor-pointer w-40 flex-shrink-0">
+      <div className="w-40 h-60 overflow-hidden rounded-md bg-gray-800">
+        <img
+          src={getImageUrl(movie.poster_path ?? '')}
+          alt={movie.title}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <h2 className="text-white font-semibold mt-2 truncate">{movie.title}</h2>
+      <p className="text-gray-300 text-sm">{movie.release_date?.substring(0, 4)}</p>
     </div>
   );
 }
