@@ -18,6 +18,11 @@ export const fetchPopular = async () => {
     return response.data;
 }
 
+export const fetchMovieDetails = async (movieId: number) => {
+    const response = await axios.get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`);
+    return response.data;
+}
+
 export const getImageUrl = (path: string) => {
     return `https://image.tmdb.org/t/p/w500/${path}`
 }
