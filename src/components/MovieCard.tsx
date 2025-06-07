@@ -17,7 +17,7 @@ export default function MovieCard({ movie, onClick }: MovieCardProps) {
         className="rounded-md"
       />
       <h2 className="text-white font-semibold">{movie.title}</h2>
-      <p className="text-gray-300 text-sm">{movie.overview.slice(0, 80)}...</p>
+      <p className="text-gray-300 text-sm">{movie.release_date.substring(0, 4)}</p>
     </div>
   );
 }
