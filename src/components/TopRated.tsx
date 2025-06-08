@@ -17,7 +17,7 @@ export default function TopRated() {
 
     return (
         <div className="p-4">
-            <h1 className="text-xl font-bold text-white mb-4">Top Rated</h1>
+            <h1 className="text-xl text-white mb-4">Top Rated</h1>
             <div className="flex space-x-4 overflow-x-auto scrollbar-hidden">
                 {movies.map((movie) => (
                     <MovieCard key={movie.id} movie={movie} />
