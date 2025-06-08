@@ -8,7 +8,7 @@ const Navbar = () => {
                 <h1 className="text-2xl md:text-3xl font-extrabold tracking-widest">CINEMA</h1>
                 <div className="flex gap-4 md:gap-6 text-md md:text-base">
                     <a href="/Favourites" className="text-white visited:text-white hover:underline">Favorite</a>
-                    <a href="/Favourites" className="text-white visited:text-white hover:underline">Watchlist</a>
+                    <a href="/Watchlist" className="text-white visited:text-white hover:underline">Watchlist</a>
                 </div>
             </nav>
         </header>
