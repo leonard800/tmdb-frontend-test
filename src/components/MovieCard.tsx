@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import type { TMDBMovie } from "../types";
 import { getImageUrl } from "../api/tmdb";
 import { FaHeart, FaRegHeart, FaBookmark, FaRegBookmark } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 interface MovieCardProps {
   movie: TMDBMovie;
@@ -12,11 +13,19 @@ interface MovieCardProps {
 }
 
 export default function MovieCard({ movie, onClick, isFavorite }: MovieCardProps) {
+  const navigate = useNavigate(); 
   const [isFav, setIsFav] = useState(isFavorite);
   const [inWatchlist, setInWatchlist] = useState(false);
 
+  const handleCardClick = () => {
+    navigate(`/movie/${movie.id}`);
+  };
+
   return (
-    <div className="relative cursor-pointer w-40 flex-shrink-0">
+    <div 
+      className="relative cursor-pointer w-40 flex-shrink-0"
+      onClick={handleCardClick} 
+    >
       <div className="w-40 h-60 overflow-hidden rounded-md bg-gray-800 relative">
         <img
           src={getImageUrl(movie.poster_path ?? "")}
