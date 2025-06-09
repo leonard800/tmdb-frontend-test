@@ -16,7 +16,6 @@ export default function MovieDetail() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* BACKDROP */}
       <div
         className="relative bg-cover bg-center h-[60vh]"
         style={{
@@ -24,12 +23,14 @@ export default function MovieDetail() {
         }}
       >
         <div className="absolute inset-0 bg-black/60 flex items-end">
-          <div className="p-6 md:p-12 flex items-start gap-8">
-            <img
-              src={getImageUrl(movie.poster_path)}
-              alt={movie.title}
-              className="w-40 md:w-56 rounded-md shadow-lg"
-            />
+          <div className="p-6 md:p-12 flex flex-col md:flex-row items-start gap-8">
+            <div className="flex-shrink-0">
+                <img
+                    src={getImageUrl(movie.poster_path)}
+                    alt={movie.title}
+                    className="w-[200px] h-[300px] object-cover rounded-md shadow-lg"
+                />
+            </div>
             <div>
               <h1 className="text-2xl md:text-4xl font-bold mb-2">
                 {movie.title}{" "}

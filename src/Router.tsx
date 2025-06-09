@@ -4,6 +4,7 @@ import Favourites from "./pages/Favourites";
 import Watchlist from "./pages/Watchlist";
 import MovieDetail from "./pages/movie/[id]/page";
 import MainLayout from "./layouts/MainLayout";
+import SearchResults from "./pages/SearchResult";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: "movie/:id", 
         element: <MovieDetail />,
+      },
+      {
+        path: "search",
+        element: <SearchResults />,
       },
     ],
   },
